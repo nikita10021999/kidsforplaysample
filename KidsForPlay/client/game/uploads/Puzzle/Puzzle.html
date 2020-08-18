@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+    
+        function check_value(fieldvalue) {
+            switch (fieldvalue) {
+            case 1:
+                document.getElementById("imagedest").innerHTML = "";
+                break;
+            case 2:
+                document.getElementById("imagedest").innerHTML = "<img src='./image/Vehicals/Ambulance.jpg'>";
+                break;
+            case 3:
+                document.getElementById("imagedest").innerHTML = "<img src='images/bike3.jpg'>";
+                break;
+            default:
+            	document.getElementById("imagedest").innerHTML="Please Try Again";
+
+            }
+        }
+        
+</script>
+</head>
+<body>
+<img src="./image/Vehicals/airplan.jpg" width="500"></img>
+<form name="builder">
+  <input type="radio" name="field" value="one" onclick='check_value(1)'/> 1<br />
+  <input type="radio" name="field" value="two" onclick='check_value(2)'/> 2<br />
+  <input type="radio" name="field" value="three" onclick='check_value(3)'/>3<br />
+  <input type="radio" name="field" value="foure" onclick='check_value(4)'/>4<br />
+</form>
+
+
+<div id="imagedest"></div>
+</body>
+</html>

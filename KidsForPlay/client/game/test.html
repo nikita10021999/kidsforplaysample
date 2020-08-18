@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <link rel="stylesheet" href="test.css">
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script type="text/javascript">
+	  
+		  $(document).ready(function(){
+		  
+			  $('#my_radio_box').change(function(){
+				  selected_value = $("input[name='b1']:checked").val();
+				  document.getElementById("demo").innerHTML=selected_value;
+
+				  $.ajax({
+							method: "POST",
+							url: "display.php",
+							data: { name: "John", location: "Boston" }
+							})
+							.done(function( msg ) {
+								alert( "Data Saved: " + msg );
+							});
+			             });
+		  
+		  });
+	  
+	  </script>
+</head>
+<body>
+<h1 align="center">GAMES</h1>
+<h2 align="center">FOR LEARNING NUMBERS</h2>
+<p id="demo"></p>
+<form id="my_radio_box">
+
+<div id="gallerywrapper">
+	    <div id="gallery">
+		    <div id="pic1">
+			    <img src="b1.jpg" height="350" width="500" alt="Image 1">
+			    <a class="previous" href="#pic5">&lt;</a>
+			    <a class="next" href="#pic2">&gt;</a>
+			    <h3>Question 1</h3><br>
+			    <p><input type="radio" name="b1" value="1" checked="checked">1
+  					<input type="radio" name="b1" value="2">2
+ 					 <input type="radio" name="b1" value="3">3   
+				</p>
+		    </div>
+		    <div id="pic2">
+			    <img src="b2.jpg" height="350" width="500" alt="Image 2">
+			    <a class="previous" href="#pic1">&lt;</a>
+			    <a class="next" href="#pic3">&gt;</a>
+			    <h3>Question 2</h3><br>
+			    <p><input type="radio" name="b1" value="1" checked>1
+					<input type="radio" name="b1" value="2">2
+					<input type="radio" name="b1" value="3"> 3  
+				</p>
+		    </div>
+		    <div id="pic3">
+			    <img src="1.png" height="350" width="500" alt="Image 3">
+			    <a class="previous" href="#pic2">&lt;</a>
+			    <a class="next" href="#pic4">&gt;</a>
+			    <h3>Question 3</h3><br>
+			    <p><input type="radio" name="b1" value="1" checked>1
+  					<input type="radio" name="b1" value="2">2
+  					<input type="radio" name="b1" value="3"> 3  
+				</p>	
+				</div>
+		    <div id="pic4">
+			    <img src="2.png" height="350" width="500" alt="Image 4">
+			    <a class="previous" href="#pic3">&lt;</a>
+			    <a class="next" href="#pic5">&gt;</a>
+			    <h3>Question 4</h3><br>
+			    <p><input type="radio" name="b1" value="1" checked>1
+  					<input type="radio" name="b1" value="2">2
+					<input type="radio" name="b1" value="3"> 3  
+			    </p>	  
+		    </div>
+		    <div id="pic5">
+			    <img src="3.png" height="350" width="500" alt="Image 5">
+			    <a class="previous" href="#pic4">&lt;</a>
+			    <a class="next" href="#pic1">&gt;</a>
+			    <h3>Question 5</h3><br>
+			    <p><input type="radio" name="b1" value="1" checked>1
+					<input type="radio" name="b1" value="2">2
+					<input type="radio" name="b1" value="3">3 
+				</p> 
+</div>
+	    </div>
+	</div>
+</form>
+</body>
+</html>
